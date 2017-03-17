@@ -1,5 +1,7 @@
 include ../makefile.preample
 
+.PHONY: all clear
+
 %.o: %.f90
 	$(F95) $(FFLAGS) -c $*.f90 $(FLINK)
 %.o: %.f

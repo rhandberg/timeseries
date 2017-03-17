@@ -1,5 +1,7 @@
 include makefile.preample
 
+.PHONY: all install clean
+
 all:
 	make -C src
 

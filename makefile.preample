@@ -1,0 +1,61 @@
+# FORTRAN Compilers
+# Portland Group Fortan:
+#	F95 = pgf95
+#	FC = pgf77
+#	FFLAGS = -fast -O3 -mp -tp=k8-64 -Mcache_align
+#	FLINK = #-lacml -lacml_mv
+#	LBLAS = -lblas
+#
+# gfortran:
+#	F95 = gfortran
+#	FC = gfortran
+#	FFLAGS = -fopenmp -O3 
+#	LBLAS =	
+#
+# Intel Fortran:
+#	F95 = ifort
+#	FC = ifort
+#	FFLAGS = -O3 -openmp
+#	LBLAS =
+#
+# G95:
+#	F95 = g95
+#	FC = g95
+#	FFLAGS = -O3
+#	LBLAS =
+#
+
+# System architecture
+ARCH=
+
+# Default settings to use if no specific
+# system has been set:
+F95 = gfortran
+FC = $(F95)
+FFLAGS = -fopenmp -O3
+FLINK =
+LBLAS =
+DELETE = rm -f
+MOVE = mv
+EXT =
+
+# System-dependent options:
+ifeq ($(ARCH),ast)
+	F95 = gfortran
+	FC = gfortran
+	FFLAGS = -fopenmp -O3
+ndif
+ifeq ($(ARCH),win64)
+	F95 = gfortran
+	FC = gfortran
+	FFLAGS = -fopenmp -O3 
+
+	DELETE = rm -f
+	MOVE = mv
+	EXT = .exe
+endif
+ifeq ($(ARCH),grendel)
+	F95 = ifort
+	FC = ifort
+	FFLAGS = -O3 -openmp
+endif

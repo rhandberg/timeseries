@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/85336350.svg)](https://zenodo.org/badge/latestdoi/85336350)
 # Timeseries Tools
 Fast, optimized tools for working with timeseries data. Calculates weighted frequency power spectra of un-evenly sampled data, filter and extracts frequencies. Written in Fortran 90 using OpenMP for parallelisation.
 

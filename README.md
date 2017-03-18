@@ -55,3 +55,164 @@ This will compile the program (by default using gfortran) and put the compiled b
 * Make automatic or semi-automatic mode for windowfunction.
 * Make oversampling-factor commandline input for spec and window.
 * Finish writing install instructions.
+
+## Documentation
+Input files should be ASCII files with three columns: time, measurement and statistical error.
+
+### Weighted Least Squares Spectrum (spec)
+```
+Input:
+  spec [options] [inputfile] [outputfile]
+
+Options:
+  -p         Power spectrum (default)
+  -a         Amplitude spectrum
+  -pd        Power density spectrum
+  -tsec      Treat times as seconds
+  -tday      Treat times as days (default)
+  -kplrraw   Input file is a Kepler data file (use raw columns)
+  -kplrpdc   Input file is a Kepler data file (use PDC columns)
+  -kplrwg    Input file is a Kepler data file (use WG columns)
+  -auto      Automatic. No interaction required (experimental)
+  -quiet     Print nothing to screen
+  -version   Print program version information
+
+Written by
+  Rasmus Handberg
+  Department of Physics and Astronomy
+  Aarhus University
+```
+
+### Spectral window function (window)
+```
+WINDOW
+Calculate the Spectral window-function
+of a timeseries.
+
+Input:
+   window [options] [inputfile] [outputfile]
+
+Options:
+   -tday      Treat times as days (default)
+   -tsec      Treat times as seconds
+   -kplrraw   Input file is a Kepler data file (use raw columns)
+   -kplrpdc   Input file is a Kepler data file (use PDC columns)
+   -kplrwg    Input file is a Kepler data file (use WG columns)
+   -quiet     Print nothing to screen
+   -version   Print program version information
+
+Written by
+  Rasmus Handberg
+  Department of Physics and Astronomy
+  Aarhus University
+```
+
+### Iterative Sine Wawe Fitting (clean)
+```
+CLEAN
+Iterative Sine Wawe Fitting
+
+Input:
+   clean [options] [inputfile] [outputfile]
+
+Options:
+   -tday      Treat times as days (default)
+   -tsec      Treat times as seconds
+   -version   Print program version information
+
+Written by
+  Rasmus Handberg
+  Department of Physics and Astronomy
+  Aarhus University
+```
+
+### Iterative Sine Wawe Fitting with limit (lclean)
+```
+LCLEAN
+Iterative Sine Wawe Fitting
+
+Description:
+  Cleans a timeseries until given limit.
+
+Input:
+  lclean [options] [inputfile] [outputfile]
+
+Options:
+  -p         Power spectrum (default)
+  -a         Amplitude spectrum
+  -pd        Power density spectrum
+  -tday      Treat times as days (default)
+  -tsec      Treat times as seconds
+  -version   Print program version information
+
+Written by
+  Rasmus Handberg
+  Department of Physics and Astronomy
+  Aarhus University
+```
+
+### Simultaneous Iterative Sine Wave Fitting (sclean)
+```
+SCLEAN
+Simultaneous Iterative Sine Wave Fitting
+
+Description:
+  Cleans a timeseries for coherent signals,
+  taking into account the influences of the
+  frequencies on each other.
+
+Input:
+  sclean [options] [inputfile] [outputfile]
+
+Options:
+  -tday      Treat times as days (default).
+  -tsec      Treat times as seconds.
+  -version   Print program version information.
+
+Written by
+  Rasmus Handberg
+  Department of Physics and Astronomy
+  Aarhus University
+```
+
+### Lowpass filtering using Weighted Least Squares (lowpass)
+```
+LOWPASS
+Lowpass filtering using Weighted Least Squares
+
+Input:
+  lowpass [options] [inputfile] [outputfile]
+
+Options:
+  -tday      Treat times as days (default).
+  -tsec      Treat times as seconds.
+  -version   Print program version information.
+
+Written by
+  Rasmus Handberg
+  Department of Physics and Astronomy
+  Aarhus University
+```
+
+### Highpass filtering using Weighted Least Squares (highpass)
+```
+HIGHPASS
+Highpass filtering using Weighted Least Squares
+
+Input:
+  highpass [options] [inputfile] [outputfile]
+
+Options:
+  -tday      Treat times as days (default)
+  -tsec      Treat times as seconds
+  -version   Print program version information
+
+Written by
+  Rasmus Handberg
+  Department of Physics and Astronomy
+  Aarhus University
+```
+
+### Bandpass filtering using Weighted Least Squares (bandpass)
+
+### Bandstop filtering using Weighted Least Squares (bandstop)

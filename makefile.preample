@@ -44,18 +44,28 @@ ifeq ($(ARCH),ast)
 	F95 = gfortran
 	FC = gfortran
 	FFLAGS = -fopenmp -O3
-ndif
+endif
 ifeq ($(ARCH),win64)
 	F95 = gfortran
 	FC = gfortran
 	FFLAGS = -fopenmp -O3 
-
-	DELETE = rm -f
-	MOVE = mv
-	EXT = .exe
 endif
 ifeq ($(ARCH),grendel)
 	F95 = ifort
 	FC = ifort
 	FFLAGS = -O3 -openmp
+endif
+
+# System-dependent options:
+ifeq ($(OS),Windows_NT)
+	# Windows specific settings
+	EXT = .exe
+#else
+#	UNAME_S := $(shell uname -s)
+#	ifeq ($(UNAME_S),Linux)
+#		# Linux specific settings
+#	endif
+#	ifeq ($(UNAME_S),Darwin)
+#		# OSX specific settings
+#	endif
 endif

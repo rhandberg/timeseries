@@ -24,7 +24,7 @@ program bandsto
 	real(dbl) :: dF, nu_max, nu1, nu2, nu_min
 	integer :: N, err, j
 	logical :: bolUseWeights
-	character(200) :: buffer, inputfile, outputfile
+	character(200) :: buffer, inputfile = '', outputfile = ''
    	integer :: TimeType = 1 ! Default time type is days
 	integer :: nargs, iargc	
 

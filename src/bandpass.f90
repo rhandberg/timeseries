@@ -25,7 +25,7 @@ program bandpas
 	real(dbl) :: t1, t2
 	integer :: N, err, j
 	logical :: bolUseWeights
-	character(200) :: buffer, inputfile, outputfile
+	character(200) :: buffer, inputfile = '', outputfile = ''
    	integer :: TimeType = 1 ! Default time type is days
 	integer :: nargs, iargc	
 	

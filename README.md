@@ -214,5 +214,22 @@ Written by
 ```
 
 ### Bandpass filtering using Weighted Least Squares (bandpass)
+```
+BANDPASS
+Bandpass filtering using Weighted Least Squares
+
+Input:
+  bandpass [options] [inputfile] [outputfile]
+
+Options:
+  -tday      Treat times as days (default).
+  -tsec      Treat times as seconds.
+  -version   Print program version information.
+
+Written by
+  Rasmus Handberg
+  Department of Physics and Astronomy
+  Aarhus University
+```
 
 ### Bandstop filtering using Weighted Least Squares (bandstop)

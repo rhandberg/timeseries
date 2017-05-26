@@ -144,18 +144,18 @@ subroutine CountData(fid, N, bolUseWeights, inputtype)
 		
 		! Count the number of columns in the file:
 		Ncolumns = Count_Items(line)
-		
+
 		! Read time, data and weight from files, based on the specified format
-		if (inputtype == 0 .and. Ncolumns == 2) then     ! Default files (3 columns)
+		if (inptype == 0 .and. Ncolumns == 2) then     ! Default files (3 columns)
 			read(line, *) tb, fb
 			wb = ""
-		elseif (inputtype == 0 .and. Ncolumns >= 3) then     ! Default files (3 columns)
+		elseif (inptype == 0 .and. Ncolumns >= 3) then     ! Default files (3 columns)
 			read(line, *) tb, fb, wb
-		elseif (inputtype == 1 .and. Ncolumns >= 3) then ! Kepler Raw data
+		elseif (inptype == 1 .and. Ncolumns >= 3) then ! Kepler Raw data
 			read(line, *) tb, fb, wb
-		elseif (inputtype == 2 .and. Ncolumns >= 5) then ! Kepler PDC Corrected data
+		elseif (inptype == 2 .and. Ncolumns >= 5) then ! Kepler PDC Corrected data
 			read(line, *) tb, dummy1, dummy2, fb, wb
-		elseif (inputtype == 3 .and. Ncolumns >= 7) then ! Kepler WG Corrected files
+		elseif (inptype == 3 .and. Ncolumns >= 7) then ! Kepler WG Corrected files
 			read(line, *) tb, dummy1, dummy2, dummy3, dummy4, fb, wb
 		else
 			print *, "('*** ERROR: Unable to parse line ',i4,' in input file. ***')", k 
@@ -216,16 +216,16 @@ subroutine ImportData(fid, bolUseWeights, t, f, w, inputtype)
 		Ncolumns = Count_Items(line)
 
 		! Read time, data and weight from files, based on the specified format
-		if (inputtype == 0 .and. Ncolumns == 2) then
+		if (inptype == 0 .and. Ncolumns == 2) then
 			read(line, *) tb, fb
 			wb = ""
-		elseif (inputtype == 0 .and. Ncolumns >= 3) then     ! Default files (3 columns)
+		elseif (inptype == 0 .and. Ncolumns >= 3) then     ! Default files (3 columns)
 			read(line, *) tb, fb, wb
-		elseif (inputtype == 1 .and. Ncolumns >= 3) then ! Kepler Raw data
+		elseif (inptype == 1 .and. Ncolumns >= 3) then ! Kepler Raw data
 			read(line, *) tb, fb, wb
-		elseif (inputtype == 2 .and. Ncolumns >= 5) then ! Kepler PDC Corrected data
+		elseif (inptype == 2 .and. Ncolumns >= 5) then ! Kepler PDC Corrected data
 			read(line, *) tb, dummy1, dummy2, fb, wb
-		elseif (inputtype == 3 .and. Ncolumns >= 7) then ! Kepler WG Corrected files
+		elseif (inptype == 3 .and. Ncolumns >= 7) then ! Kepler WG Corrected files
 			read(line, *) tb, dummy1, dummy2, dummy3, dummy4, fb, wb
 		else
 			exit
